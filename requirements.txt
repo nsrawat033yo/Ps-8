@@ -1,0 +1,11 @@
+rasterio
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+torch
+nbformat
+pyproj
+Pillow
+PyMuPDF

@@ -1,0 +1,5 @@
+layer,status,detail
+SAR/DFSAR,usable,Selected ch2_sar_ncls_20200808t201154198_d_cp_d18 with AOI coverage 1.000
+DEM/LDEM/LDSM,usable,DEM rasters cover configured south-pole AOI and were resampled to SAR AOI for planning context.
+OHRC,context only,Available OHRC footprints do not directly co-register to Faustini AOI; download calibrated overlapping product.
+Ground truth labels,not available,U-Net uses rule-based pseudo-labels; metrics are agreement only.

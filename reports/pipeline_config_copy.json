@@ -1,0 +1,48 @@
+{
+  "project_name": "LunaQuest / Lunar IceNav",
+  "aoi": {
+    "name": "Faustini F2 prototype AOI",
+    "lat_min": -87.8,
+    "lat_max": -86.9,
+    "lon_min": 80.0,
+    "lon_max": 85.0
+  },
+  "lunar_radius_m": 1737400.0,
+  "processing": {
+    "window_height": 1024,
+    "window_width": 1024,
+    "multilook_rows": 1,
+    "multilook_cols": 1,
+    "max_demo_pixels": 900000,
+    "nodata_policy": "mask"
+  },
+  "candidate_screen": {
+    "ratio_quantile": 0.88,
+    "intensity_quantile": 0.70,
+    "min_patch_pixels": 8,
+    "max_texture_quantile": 0.98
+  },
+  "planning": {
+    "max_slope_deg": 12.0,
+    "soft_max_slope_deg": 15.0,
+    "candidate_clearance_pixels": 3,
+    "top_site_count": 5
+  },
+  "unet": {
+    "enabled": true,
+    "tile_size": 128,
+    "max_tiles": 64,
+    "epochs": 12,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "validation_fraction": 0.25,
+    "checkpoint_path": "models/unet_pseudolabel.pt"
+  },
+  "outputs": {
+    "figures": "outputs/figures",
+    "tables": "outputs/tables",
+    "masks": "outputs/masks",
+    "routes": "outputs/routes",
+    "reports": "reports"
+  }
+}

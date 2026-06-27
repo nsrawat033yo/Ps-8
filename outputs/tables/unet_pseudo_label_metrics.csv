@@ -1,0 +1,2 @@
+pseudo_iou,pseudo_dice,prediction_fraction,pseudo_label_fraction,training_loss_last,validation_loss_last,validation_pseudo_iou_last,validation_pseudo_dice_last,training_tiles,validation_tiles,augmented_training_tiles,prediction_threshold,checkpoint_path
+0.26524685382381413,0.41928079571537874,0.0013747351427706588,0.0013726331012679513,1.1300250356611998,1.2297405004501343,0.266199649737303,0.42047026279391425,46,18,184,0.9844234585762024,models\unet_pseudolabel.pt

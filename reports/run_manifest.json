@@ -1,0 +1,54 @@
+{
+  "project": "LunaQuest / Lunar IceNav",
+  "aoi": {
+    "name": "Faustini F2 prototype AOI",
+    "lat_min": -87.8,
+    "lat_max": -86.9,
+    "lon_min": 80.0,
+    "lon_max": 85.0
+  },
+  "selected_sar": {
+    "lh": "C:\\Users\\nsraw\\Downloads\\tantra-mantra\\ch2_sar_ncls_20200808t201154198_d_cp_d18\\data\\calibrated\\20200808\\ch2_sar_ncxl_20200808t201154198_d_sri_xx_cp_lh_d18.tif",
+    "lv": "C:\\Users\\nsraw\\Downloads\\tantra-mantra\\ch2_sar_ncls_20200808t201154198_d_cp_d18\\data\\calibrated\\20200808\\ch2_sar_ncxl_20200808t201154198_d_sri_xx_cp_lv_d18.tif",
+    "xml": "C:\\Users\\nsraw\\Downloads\\tantra-mantra\\ch2_sar_ncls_20200808t201154198_d_cp_d18\\data\\calibrated\\20200808\\ch2_sar_ncxl_20200808t201154198_d_sri_xx_cp_xx_d18.xml",
+    "mask": "C:\\Users\\nsraw\\Downloads\\tantra-mantra\\ch2_sar_ncls_20200808t201154198_d_cp_d18\\data\\calibrated\\20200808\\ch2_sar_ncxl_20200808t201154198_d_sri_ma_cp_xx_d18.tif",
+    "incidence": "C:\\Users\\nsraw\\Downloads\\tantra-mantra\\ch2_sar_ncls_20200808t201154198_d_cp_d18\\data\\calibrated\\20200808\\ch2_sar_ncxl_20200808t201154198_d_sri_in_cp_xx_d18.tif",
+    "coverage_fraction": 1.0,
+    "pixel_size_m": 25.0,
+    "width": 6618,
+    "height": 2258,
+    "bounds": [
+      -13488.786634,
+      -17838.681130999998,
+      151961.213366,
+      38611.318869
+    ],
+    "crs_wkt": "PROJCS[\"POLARSTEREOGRAPHIC MOON\",GEOGCS[\"GCS_MOON\",DATUM[\"D_MOON\",SPHEROID[\"MOON_polarRadius\",1737400,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Polar_Stereographic\"],PARAMETER[\"latitude_of_origin\",-90],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1],AXIS[\"Easting\",NORTH],AXIS[\"Northing\",NORTH]]",
+    "product_id": "ch2_sar_ncls_20200808t201154198_d_cp_d18"
+  },
+  "sar_window": {
+    "row_off": 889,
+    "col_off": 3165,
+    "height": 424,
+    "width": 1122
+  },
+  "thresholds": {
+    "ratio_threshold": 1.2476634979248047,
+    "intensity_threshold": 7.129297733306885,
+    "texture_threshold": 0.4493114948272705,
+    "score_threshold": 0.5223177075386047
+  },
+  "feature_note": "SRI LH/LV rasters are intensity products. True CPR/DOP require the exact compact-pol convention and/or complex/Stokes products, so these are screening proxies only.",
+  "unet_note": "weakly supervised U-Net trained against rule-based pseudo-labels and SAR screening features; metrics measure pseudo-label agreement, not ground-truth ice accuracy",
+  "unet_checkpoint": "models\\unet_pseudolabel.pt",
+  "outputs": {
+    "figures": "outputs\\figures",
+    "tables": "outputs\\tables",
+    "masks": "outputs\\masks",
+    "routes": "outputs\\routes",
+    "reports": "reports",
+    "models": "models",
+    "metadata": "data\\metadata",
+    "notebooks": "notebooks"
+  }
+}

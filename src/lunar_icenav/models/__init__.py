@@ -1,0 +1,1 @@
+"""Weakly supervised model prototypes."""

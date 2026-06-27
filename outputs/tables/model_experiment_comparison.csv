@@ -1,0 +1,4 @@
+experiment,input_channels,pseudo_iou,pseudo_dice,pseudo_precision,pseudo_recall,prediction_fraction,pseudo_label_fraction,note
+TinyUNet_5channel_weighted_loss,"SAR log intensity, ratio proxy, texture, polarization imbalance proxy, candidate score",0.26524685382381413,0.41928079571537874,0.41896024464831805,0.41960183767228176,0.0013747351427706588,0.0013726331012679513,weakly supervised pseudo-label agreement only
+candidate_score_quantile_baseline,candidate score threshold baseline,0.06606384941871193,0.12393976112168946,0.06986729117876658,0.5482388973966309,0.010770860659872868,0.0013726331012679513,baseline pseudo-label agreement only
+candidate_score_strict_threshold,candidate score threshold baseline,0.01372627330628718,0.0270808277692531,0.01372627330628718,1.0,0.10000042040830054,0.0013726331012679513,baseline pseudo-label agreement only
