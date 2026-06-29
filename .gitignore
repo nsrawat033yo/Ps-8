@@ -15,6 +15,7 @@ env/
 ch2_sar_ncls_*/
 ch2_sar_ncxl_*/
 ch2_ohr_*_Bundle/
+ch2_tmc_*/
 DEM Data/
 TMC2 data/
 
@@ -23,3 +24,11 @@ TMC2 data/
 *.tiff
 *.img
 *.zip
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+*.mdb
+*.accdb
