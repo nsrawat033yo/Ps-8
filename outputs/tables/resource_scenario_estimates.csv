@@ -1,91 +1,121 @@
-candidate_id,confidence_level,candidate_area_m2,assumed_depth_m,assumed_ice_fraction,approx_candidate_volume_m3,interpretation
-C-053,High,9375.0,1,0.05,468.75,scenario-based potential resource volume if the candidate patch is later validated
-C-053,High,9375.0,1,0.1,937.5,scenario-based potential resource volume if the candidate patch is later validated
-C-053,High,9375.0,1,0.2,1875.0,scenario-based potential resource volume if the candidate patch is later validated
-C-053,High,9375.0,3,0.05,1406.25,scenario-based potential resource volume if the candidate patch is later validated
-C-053,High,9375.0,3,0.1,2812.5,scenario-based potential resource volume if the candidate patch is later validated
-C-053,High,9375.0,3,0.2,5625.0,scenario-based potential resource volume if the candidate patch is later validated
-C-053,High,9375.0,5,0.05,2343.75,scenario-based potential resource volume if the candidate patch is later validated
-C-053,High,9375.0,5,0.1,4687.5,scenario-based potential resource volume if the candidate patch is later validated
-C-053,High,9375.0,5,0.2,9375.0,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,1,0.05,437.5,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,1,0.1,875.0,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,1,0.2,1750.0,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,3,0.05,1312.5,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,3,0.1,2625.0,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,3,0.2,5250.0,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,5,0.05,2187.5,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,5,0.1,4375.0,scenario-based potential resource volume if the candidate patch is later validated
-C-033,High,8750.0,5,0.2,8750.0,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,1,0.05,437.5,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,1,0.1,875.0,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,1,0.2,1750.0,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,3,0.05,1312.5,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,3,0.1,2625.0,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,3,0.2,5250.0,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,5,0.05,2187.5,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,5,0.1,4375.0,scenario-based potential resource volume if the candidate patch is later validated
-C-043,High,8750.0,5,0.2,8750.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,1,0.05,500.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,1,0.1,1000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,1,0.2,2000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,3,0.05,1500.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,3,0.1,3000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,3,0.2,6000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,5,0.05,2500.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,5,0.1,5000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-007,High,10000.0,5,0.2,10000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,1,0.05,500.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,1,0.1,1000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,1,0.2,2000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,3,0.05,1500.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,3,0.1,3000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,3,0.2,6000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,5,0.05,2500.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,5,0.1,5000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-006,High,10000.0,5,0.2,10000.0,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,1,0.05,437.5,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,1,0.1,875.0,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,1,0.2,1750.0,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,3,0.05,1312.5,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,3,0.1,2625.0,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,3,0.2,5250.0,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,5,0.05,2187.5,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,5,0.1,4375.0,scenario-based potential resource volume if the candidate patch is later validated
-C-009,High,8750.0,5,0.2,8750.0,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,1,0.05,468.75,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,1,0.1,937.5,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,1,0.2,1875.0,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,3,0.05,1406.25,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,3,0.1,2812.5,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,3,0.2,5625.0,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,5,0.05,2343.75,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,5,0.1,4687.5,scenario-based potential resource volume if the candidate patch is later validated
-C-019,High,9375.0,5,0.2,9375.0,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,1,0.05,406.25,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,1,0.1,812.5,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,1,0.2,1625.0,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,3,0.05,1218.75,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,3,0.1,2437.5,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,3,0.2,4875.0,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,5,0.05,2031.25,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,5,0.1,4062.5,scenario-based potential resource volume if the candidate patch is later validated
-C-027,High,8125.0,5,0.2,8125.0,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,1,0.05,406.25,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,1,0.1,812.5,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,1,0.2,1625.0,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,3,0.05,1218.75,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,3,0.1,2437.5,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,3,0.2,4875.0,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,5,0.05,2031.25,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,5,0.1,4062.5,scenario-based potential resource volume if the candidate patch is later validated
-C-056,High,8125.0,5,0.2,8125.0,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,1,0.05,437.5,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,1,0.1,875.0,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,1,0.2,1750.0,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,3,0.05,1312.5,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,3,0.1,2625.0,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,3,0.2,5250.0,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,5,0.05,2187.5,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,5,0.1,4375.0,scenario-based potential resource volume if the candidate patch is later validated
-C-021,High,8750.0,5,0.2,8750.0,scenario-based potential resource volume if the candidate patch is later validated
+candidate_id,confidence_level,candidate_area_m2,assumed_depth_m,assumed_ice_fraction,scenario_volume_m3,scenario_mass_kg_using_917kg_m3,interpretation
+C-025,High,13125.0,1,0.01,131.25,120356.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,1,0.03,393.75,361068.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,1,0.06,787.5,722137.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,1,0.1,1312.5,1203562.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,3,0.01,393.75,361068.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,3,0.03,1181.25,1083206.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,3,0.06,2362.5,2166412.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,3,0.1,3937.5,3610687.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,5,0.01,656.25,601781.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,5,0.03,1968.75,1805343.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,5,0.06,3937.5,3610687.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-025,High,13125.0,5,0.1,6562.5,6017812.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,1,0.01,93.75,85968.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,1,0.03,281.25,257906.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,1,0.06,562.5,515812.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,1,0.1,937.5,859687.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,3,0.01,281.25,257906.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,3,0.03,843.75,773718.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,3,0.06,1687.5,1547437.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,3,0.1,2812.5,2579062.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,5,0.01,468.75,429843.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,5,0.03,1406.25,1289531.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,5,0.06,2812.5,2579062.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-042,High,9375.0,5,0.1,4687.5,4298437.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,1,0.01,112.5,103162.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,1,0.03,337.5,309487.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,1,0.06,675.0,618975.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,1,0.1,1125.0,1031625.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,3,0.01,337.5,309487.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,3,0.03,1012.5,928462.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,3,0.06,2025.0,1856925.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,3,0.1,3375.0,3094875.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,5,0.01,562.5,515812.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,5,0.03,1687.5,1547437.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,5,0.06,3375.0,3094875.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-011,Medium,11250.0,5,0.1,5625.0,5158125.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,1,0.01,87.5,80237.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,1,0.03,262.5,240712.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,1,0.06,525.0,481425.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,1,0.1,875.0,802375.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,3,0.01,262.5,240712.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,3,0.03,787.5,722137.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,3,0.06,1575.0,1444275.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,3,0.1,2625.0,2407125.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,5,0.01,437.5,401187.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,5,0.03,1312.5,1203562.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,5,0.06,2625.0,2407125.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-022,Medium,8750.0,5,0.1,4375.0,4011875.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,1,0.01,50.0,45850.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,1,0.03,150.0,137550.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,1,0.06,300.0,275100.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,1,0.1,500.0,458500.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,3,0.01,150.0,137550.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,3,0.03,450.0,412650.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,3,0.06,900.0,825300.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,3,0.1,1500.0,1375500.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,5,0.01,250.0,229250.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,5,0.03,750.0,687750.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,5,0.06,1500.0,1375500.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-055,Medium,5000.0,5,0.1,2500.0,2292500.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,1,0.01,62.5,57312.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,1,0.03,187.5,171937.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,1,0.06,375.0,343875.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,1,0.1,625.0,573125.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,3,0.01,187.5,171937.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,3,0.03,562.5,515812.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,3,0.06,1125.0,1031625.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,3,0.1,1875.0,1719375.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,5,0.01,312.5,286562.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,5,0.03,937.5,859687.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,5,0.06,1875.0,1719375.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-052,Medium,6250.0,5,0.1,3125.0,2865625.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,1,0.01,106.25,97431.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,1,0.03,318.75,292293.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,1,0.06,637.5,584587.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,1,0.1,1062.5,974312.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,3,0.01,318.75,292293.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,3,0.03,956.25,876881.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,3,0.06,1912.5,1753762.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,3,0.1,3187.5,2922937.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,5,0.01,531.25,487156.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,5,0.03,1593.75,1461468.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,5,0.06,3187.5,2922937.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-033,Medium,10625.0,5,0.1,5312.5,4871562.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,1,0.01,87.5,80237.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,1,0.03,262.5,240712.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,1,0.06,525.0,481425.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,1,0.1,875.0,802375.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,3,0.01,262.5,240712.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,3,0.03,787.5,722137.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,3,0.06,1575.0,1444275.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,3,0.1,2625.0,2407125.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,5,0.01,437.5,401187.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,5,0.03,1312.5,1203562.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,5,0.06,2625.0,2407125.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-023,Medium,8750.0,5,0.1,4375.0,4011875.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,1,0.01,87.5,80237.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,1,0.03,262.5,240712.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,1,0.06,525.0,481425.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,1,0.1,875.0,802375.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,3,0.01,262.5,240712.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,3,0.03,787.5,722137.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,3,0.06,1575.0,1444275.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,3,0.1,2625.0,2407125.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,5,0.01,437.5,401187.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,5,0.03,1312.5,1203562.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,5,0.06,2625.0,2407125.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-029,Medium,8750.0,5,0.1,4375.0,4011875.0,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,1,0.01,106.25,97431.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,1,0.03,318.75,292293.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,1,0.06,637.5,584587.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,1,0.1,1062.5,974312.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,3,0.01,318.75,292293.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,3,0.03,956.25,876881.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,3,0.06,1912.5,1753762.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,3,0.1,3187.5,2922937.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,5,0.01,531.25,487156.25,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,5,0.03,1593.75,1461468.75,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,5,0.06,3187.5,2922937.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate
+C-014,Low,10625.0,5,0.1,5312.5,4871562.5,scenario-based potential resource estimate if the candidate patch is later validated; planning-only estimate

@@ -33,18 +33,25 @@
     "width": 1122
   },
   "thresholds": {
-    "ratio_threshold": 1.2476634979248047,
-    "intensity_threshold": 7.129297733306885,
-    "texture_threshold": 0.4493114948272705,
-    "score_threshold": 0.5223177075386047
+    "ratio_threshold": 1.2317471504211426,
+    "intensity_threshold": 7.177018642425537,
+    "texture_threshold": 0.46717697381973267,
+    "score_threshold": 0.5298912525177002
   },
   "feature_note": "SRI LH/LV rasters are intensity products. True CPR/DOP require the exact compact-pol convention and/or complex/Stokes products, so these are screening proxies only.",
+  "terrain_source": "TMC-2 DTM: ch2_tmc_ndn_20231026T1735025409_d_dtm_d18",
+  "selected_tmc": {
+    "product_id": "ch2_tmc_ndn_20231026T1735025409_d_dtm_d18",
+    "path": "C:\\Users\\nsraw\\Downloads\\tantra-mantra\\ch2_tmc_ndn_20231026T1735025409_d_dtm_d18\\data\\derived\\20231026\\ch2_tmc_ndn_20231026T1735025409_d_dtm_d18.tif",
+    "coverage_fraction": 1.0
+  },
   "unet_note": "weakly supervised U-Net trained against rule-based pseudo-labels and SAR screening features; metrics measure pseudo-label agreement, not ground-truth ice accuracy",
   "unet_checkpoint": "models\\unet_pseudolabel.pt",
   "outputs": {
     "figures": "outputs\\figures",
     "tables": "outputs\\tables",
     "masks": "outputs\\masks",
+    "rasters": "outputs\\rasters",
     "routes": "outputs\\routes",
     "reports": "reports",
     "models": "models",

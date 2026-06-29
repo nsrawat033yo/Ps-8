@@ -8,7 +8,7 @@ No output is presented as compositional proof. Candidate masks are screening out
 
 ## Actual data availability
 
-- Inventory rows: 245
+- Inventory rows: 1136
 - Selected SAR product: `ch2_sar_ncls_20200808t201154198_d_cp_d18`
 - Selected SAR AOI coverage fraction: 1.000
 - Selected SAR pixel size: 25.0 m
@@ -17,16 +17,16 @@ No output is presented as compositional proof. Candidate masks are screening out
 
 ## Candidate screening result
 
-- Candidate patches found: 65
-- Candidate mask area: 0.255% of valid AOI pixels
-- Top candidate: C-053 with area 9375.0 m2 and mean score 0.7999980449676514
+- Candidate patches found: 57
+- Candidate mask area: 0.375% of valid AOI pixels
+- Top candidate: C-055 with area 5000.0 m2 and mean score 0.8225793838500977
 
 The SAR features are intensity, LH/LV ratio proxy, polarization imbalance proxy, texture, and a combined candidate score. True CPR/DOP are not claimed because the available SRI rasters are real-valued intensity products rather than the complex/Stokes products needed for a defensible CPR/DOP derivation.
 
 ## Landing and route prototype
 
 - Landing candidates found: 5
-- Top landing candidate: L-01 with suitability score 0.9552358388900757
+- Top landing candidate: L-01 with suitability score 0.9204651117324829
 - Route variants: shortest, safest, science_priority, energy_efficient
 - Blocked slope threshold for routing: >15 deg
 
@@ -35,18 +35,18 @@ The SAR features are intensity, LH/LV ratio proxy, polarization imbalance proxy,
 weakly supervised U-Net trained against rule-based pseudo-labels and SAR screening features; metrics measure pseudo-label agreement, not ground-truth ice accuracy
 
 Pseudo-label metrics: `{
-  "pseudo_iou": 0.26524685382381413,
-  "pseudo_dice": 0.41928079571537874,
-  "prediction_fraction": 0.0013747351427706588,
-  "pseudo_label_fraction": 0.0013726331012679513,
-  "training_loss_last": 1.1300250356611998,
-  "validation_loss_last": 1.2297405004501343,
-  "validation_pseudo_iou_last": 0.266199649737303,
-  "validation_pseudo_dice_last": 0.42047026279391425,
-  "training_tiles": 46,
-  "validation_tiles": 18,
-  "augmented_training_tiles": 184,
-  "prediction_threshold": 0.9844234585762024
+  "pseudo_iou": 0.2489406779661017,
+  "pseudo_dice": 0.3986429177268872,
+  "prediction_fraction": 0.0012402044865973834,
+  "pseudo_label_fraction": 0.001238102445094676,
+  "training_loss_last": 1.1062535618742306,
+  "validation_loss_last": 1.0395095348358154,
+  "validation_pseudo_iou_last": 0.10130718954248366,
+  "validation_pseudo_dice_last": 0.18397626112759644,
+  "training_tiles": 48,
+  "validation_tiles": 16,
+  "augmented_training_tiles": 192,
+  "prediction_threshold": 0.9935863614082336
 }`
 
 ## Best current research outputs
@@ -75,9 +75,9 @@ python -m lunar_icenav.cli notebook --config configs/pipeline.json
 
 ## DEM slope safety summary
 
-| valid_slope_pixels | mean_slope_deg | median_slope_deg | safe_lt_5deg_pct | moderate_5_10deg_pct | unsafe_gt_10deg_pct | blocked_gt_15deg_pct |
-| --- | --- | --- | --- | --- | --- | --- |
-| 256181.0 | 9.301920890808105 | 8.23563289642334 | 37.9852526143625 | 16.36499193929292 | 45.64975544634458 | 28.700801386519686 |
+| valid_slope_pixels | mean_slope_deg | median_slope_deg | safe_lt_5deg_pct | acceptable_5_to_8deg_pct | marginal_8_to_10deg_pct | moderate_5_10deg_pct | unsafe_gt_10deg_pct | blocked_gt_15deg_pct | terrain_source | tmc_selected_product_id |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 157142 | 1.1772416830062866 | 0.0 | 91.30913441346044 | 3.1850173728220335 | 1.647554441206043 | 4.832571814028077 | 3.858293772511486 | 1.6329179977345332 | TMC-2 DTM: ch2_tmc_ndn_20231026T1735025409_d_dtm_d18 | ch2_tmc_ndn_20231026T1735025409_d_dtm_d18 |
 
 ## SAR AOI overlap table
 

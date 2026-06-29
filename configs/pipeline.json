@@ -23,7 +23,7 @@
     "max_texture_quantile": 0.98
   },
   "planning": {
-    "max_slope_deg": 12.0,
+    "max_slope_deg": 8.0,
     "soft_max_slope_deg": 15.0,
     "candidate_clearance_pixels": 3,
     "top_site_count": 5

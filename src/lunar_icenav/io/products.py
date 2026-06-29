@@ -47,9 +47,11 @@ def classify_file(path: Path) -> tuple[str, str]:
     role = "metadata"
     if "sar" in name or any("ch2_sar" in p.lower() for p in path.parts):
         sensor = "SAR/DFSAR"
+    elif "tmc" in name or any("ch2_tmc" in p.lower() for p in path.parts):
+        sensor = "TMC-2 DTM"
     elif "ohr" in name or any("ch2_ohr" in p.lower() for p in path.parts):
         sensor = "OHRC"
-    elif "ldem" in name or "ldsm" in name or "dem" in str(path).lower():
+    elif "ldem" in name or "ldsm" in name or "dem" in str(path).lower() or "dtm" in str(path).lower():
         sensor = "DEM/topography"
 
     if suffix in {".tif", ".tiff"}:
@@ -238,6 +240,8 @@ def discover_products(root: Path, aoi_summary: str = "not checked") -> pd.DataFr
                 row["sample_p98"] = meta.get("p98")
                 if sensor == "SAR/DFSAR" and "_d_sri_" in path.name.lower():
                     row["role"] = "radar candidate detection"
+                if sensor == "TMC-2 DTM":
+                    row["role"] = "terrain DTM / slope"
                 if sensor == "DEM/topography":
                     row["role"] = "topography / slope"
         elif suffix == ".xml":

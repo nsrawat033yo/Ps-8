@@ -10,8 +10,8 @@ env/
 .env
 
 # Large raw Chandrayaan/lunar product folders kept local.
-# The repository tracks code, metadata, reports, notebooks, generated figures,
-# generated tables, route outputs, masks, and model artifacts.
+# The repository tracks code, metadata, reports, notebooks, generated tables,
+# route outputs, masks, model artifacts, and a curated set of figures.
 ch2_sar_ncls_*/
 ch2_sar_ncxl_*/
 ch2_ohr_*_Bundle/
@@ -19,11 +19,49 @@ ch2_tmc_*/
 DEM Data/
 TMC2 data/
 
+# Keep datasets local; only the metadata subfolder is tracked.
+data/*
+!data/metadata/
+!data/metadata/**
+
 # Large raw geospatial/bundle files if copied elsewhere
 *.tif
 *.tiff
 *.img
 *.zip
+
+# Ignore generated PNGs by default and keep only the curated figure set.
+*.png
+!outputs/figures/01_dataset_inventory_chart.png
+!outputs/figures/02_selected_sar_coverage.png
+!outputs/figures/03_sar_quicklook.png
+!outputs/figures/04_sar_feature_panel.png
+!outputs/figures/05_radar_candidate_overlay.png
+!outputs/figures/06_candidate_patch_area_histogram.png
+!outputs/figures/06b_top_candidate_patches.png
+!outputs/figures/06c_candidate_score_distribution.png
+!outputs/figures/06d_candidate_centroid_map.png
+!outputs/figures/06e_candidate_uncertainty_map.png
+!outputs/figures/07_dem_elevation_map.png
+!outputs/figures/08_dem_slope_map.png
+!outputs/figures/08b_slope_classification_map.png
+!outputs/figures/09_landing_suitability_map.png
+!outputs/figures/10_top_landing_candidates_overlay.png
+!outputs/figures/11_rover_route_comparison.png
+!outputs/figures/12_rover_route_overlay.png
+!outputs/figures/13_ohrc_context_hazard_proxy.png
+!outputs/figures/14_unet_training_curve.png
+!outputs/figures/15_unet_prediction_overlay.png
+!outputs/figures/16_combined_decision_map.png
+!outputs/figures/candidate_area_vs_score_scatter.png
+!outputs/figures/candidate_diameter_distribution.png
+!outputs/figures/candidate_score_vs_roughness.png
+!outputs/figures/candidate_score_vs_slope.png
+!outputs/figures/candidate_stability_map.png
+!outputs/figures/combined_research_decision_map.png
+!outputs/figures/depth_likelihood_map.png
+!outputs/figures/fuzzy_landing_score_map.png
+!outputs/figures/hazard_overlay_on_terrain.png
 
 # Local database files
 *.db

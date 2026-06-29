@@ -1,0 +1,2 @@
+comparison,status,tmc2_product_id,tmc2_pixel_size_m,overlap_pixels,tmc2_mean_slope_deg,lola_ldem_ldsm_mean_slope_deg,mean_difference_deg_tmc2_minus_lola,median_abs_difference_deg,p95_abs_difference_deg,interpretation
+TMC-2 DTM vs LOLA/LDEM/LDSM slope,available,ch2_tmc_ndn_20231026T1735025409_d_dtm_d18,10.0,475728,0.5089661478996277,7.466083526611328,-6.957117445625503,4.4579644203186035,18.1787971496582,terrain-model sensitivity check for planning; not an accuracy claim without co-registration validation

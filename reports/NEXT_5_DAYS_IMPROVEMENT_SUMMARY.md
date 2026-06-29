@@ -20,19 +20,19 @@
 
 ## Current Evaluation-Style Summary
 
-- Radar-based candidate patches: 65
+- Radar-based candidate patches: 57
 - Preliminary landing candidates: 5
 - Route variants: 4
-- U-Net pseudo-IoU: 0.26524685382381413
-- U-Net pseudo-Dice: 0.41928079571537874
-- Safe slope area <5 deg: 37.9852526143625%
+- U-Net pseudo-IoU: 0.2489406779661017
+- U-Net pseudo-Dice: 0.3986429177268872
+- Safe slope area <5 deg: 91.30913441346044%
 
 ## Still Needs Validation
 
 - CPR/DOP must be derived only after validating product convention or obtaining complex/Stokes layers.
 - OHRC Faustini-overlapping product is still needed for real optical hazard analysis.
 - Illumination, thermal, and communication layers are placeholders/future layers.
-- U-Net metrics are pseudo-label agreement only, not true ice detection accuracy.
+- U-Net metrics are pseudo-label agreement only; independent validation labels are not available.
 
 ## Recommended Next Technical Work
 

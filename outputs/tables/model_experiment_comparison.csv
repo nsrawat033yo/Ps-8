@@ -1,4 +1,4 @@
 experiment,input_channels,pseudo_iou,pseudo_dice,pseudo_precision,pseudo_recall,prediction_fraction,pseudo_label_fraction,note
-TinyUNet_5channel_weighted_loss,"SAR log intensity, ratio proxy, texture, polarization imbalance proxy, candidate score",0.26524685382381413,0.41928079571537874,0.41896024464831805,0.41960183767228176,0.0013747351427706588,0.0013726331012679513,weakly supervised pseudo-label agreement only
-candidate_score_quantile_baseline,candidate score threshold baseline,0.06606384941871193,0.12393976112168946,0.06986729117876658,0.5482388973966309,0.010770860659872868,0.0013726331012679513,baseline pseudo-label agreement only
-candidate_score_strict_threshold,candidate score threshold baseline,0.01372627330628718,0.0270808277692531,0.01372627330628718,1.0,0.10000042040830054,0.0013726331012679513,baseline pseudo-label agreement only
+TinyUNet_5channel_weighted_loss,"SAR log intensity, ratio proxy, texture, polarization imbalance proxy, candidate score",0.2489406779661017,0.3986429177268872,0.3983050847457627,0.398981324278438,0.0012402044865973834,0.001238102445094676,weakly supervised pseudo-label agreement only
+candidate_score_quantile_baseline,candidate score threshold baseline,0.10446877774489494,0.18917470525187566,0.1123130766783328,0.599320882852292,0.006606716443009451,0.001238102445094676,baseline pseudo-label agreement only
+candidate_score_strict_threshold,candidate score threshold baseline,0.0123809724003111,0.02445911714629791,0.0123809724003111,1.0,0.10000042040830054,0.001238102445094676,baseline pseudo-label agreement only

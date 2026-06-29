@@ -225,26 +225,32 @@ def save_slope_classification(slope: np.ndarray, path: Path) -> dict[str, float]
     classes = np.full(slope.shape, -1, dtype=int)
     valid = np.isfinite(slope)
     classes[valid & (slope < 5)] = 0
-    classes[valid & (slope >= 5) & (slope <= 10)] = 1
-    classes[valid & (slope > 10)] = 2
-    cmap = ListedColormap(["#2ecc71", "#ffcc00", "#e74c3c"])
+    classes[valid & (slope >= 5) & (slope < 8)] = 1
+    classes[valid & (slope >= 8) & (slope <= 10)] = 2
+    classes[valid & (slope > 10) & (slope <= 15)] = 3
+    classes[valid & (slope > 15)] = 4
+    cmap = ListedColormap(["#2ecc71", "#ffcc00", "#f39c12", "#e74c3c", "#7b1fa2"])
     fig, ax = plt.subplots(figsize=(11, 4.8))
-    im = ax.imshow(np.ma.masked_where(classes < 0, classes), cmap=cmap, vmin=0, vmax=2)
+    im = ax.imshow(np.ma.masked_where(classes < 0, classes), cmap=cmap, vmin=0, vmax=4)
     ax.set_title("DEM Slope Classification for Preliminary Landing Safety", fontsize=14, fontweight="bold")
     ax.set_axis_off()
     legend = [
         Line2D([0], [0], color="#2ecc71", lw=8, label="safe < 5 deg"),
-        Line2D([0], [0], color="#ffcc00", lw=8, label="moderate 5-10 deg"),
+        Line2D([0], [0], color="#ffcc00", lw=8, label="acceptable 5-8 deg"),
+        Line2D([0], [0], color="#f39c12", lw=8, label="marginal 8-10 deg"),
         Line2D([0], [0], color="#e74c3c", lw=8, label="unsafe > 10 deg"),
+        Line2D([0], [0], color="#7b1fa2", lw=8, label="rover blocked/high risk > 15 deg"),
     ]
     ax.legend(handles=legend, loc="lower right", framealpha=0.9)
     total = max(int(valid.sum()), 1)
     stats = {
         "safe_slope_pct": float(((classes == 0).sum() / total) * 100),
-        "moderate_slope_pct": float(((classes == 1).sum() / total) * 100),
-        "unsafe_slope_pct": float(((classes == 2).sum() / total) * 100),
+        "acceptable_slope_pct": float(((classes == 1).sum() / total) * 100),
+        "marginal_slope_pct": float(((classes == 2).sum() / total) * 100),
+        "unsafe_slope_pct": float(((classes == 3).sum() / total) * 100),
+        "blocked_slope_pct": float(((classes == 4).sum() / total) * 100),
     }
-    fig.text(0.01, 0.02, "Slope classes are DEM-derived screening classes, not final landing certification.", fontsize=9)
+    fig.text(0.01, 0.02, "Slope classes are DEM-derived screening classes; landing certification requires independent review.", fontsize=9)
     fig.subplots_adjust(left=0.01, right=0.99, top=0.88, bottom=0.08)
     fig.savefig(path, dpi=300)
     plt.close(fig)
@@ -311,7 +317,7 @@ def save_landing_score_components(landing_sites: pd.DataFrame, path: Path) -> No
     ax.set_title("Top Preliminary Landing Candidate Scores", fontsize=14, fontweight="bold")
     ax.set_xlabel("Landing candidate")
     ax.set_ylabel("Suitability score")
-    fig.text(0.01, 0.01, "Scores combine low slope, terrain safety proxy, candidate proximity, and illumination-like proxy.", fontsize=8)
+    fig.text(0.01, 0.01, "Scores combine low slope, terrain safety proxy, candidate proximity, and neutral placeholders for missing external layers.", fontsize=8)
     fig.savefig(path, dpi=300)
     plt.close(fig)
 
@@ -320,7 +326,7 @@ def save_route_comparison(route_summary: pd.DataFrame, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fig, axes = plt.subplots(1, 3, figsize=(13, 4.6), constrained_layout=True)
     metrics = [("length_m", "Length (m)"), ("cost", "Cost"), ("max_slope_deg", "Max slope (deg)")]
-    colors = ["#ffcc00", "#ff2bbd", "#00bcd4"]
+    colors = ["#ffcc00", "#ff2bbd", "#00bcd4", "#43a047"]
     for ax, (col, label) in zip(axes, metrics):
         if not route_summary.empty and col in route_summary:
             ax.bar(route_summary["route_type"], route_summary[col].astype(float), color=colors[: len(route_summary)])
@@ -349,7 +355,7 @@ def save_unet_training_curve(history: pd.DataFrame, path: Path) -> None:
     axes[1].set_xlabel("Epoch")
     axes[1].set_ylabel("Agreement")
     fig.suptitle("Weakly Supervised U-Net Training Curves", fontsize=14, fontweight="bold")
-    fig.text(0.01, 0.01, "Metrics measure agreement with pseudo-labels, not true ice detection accuracy.", fontsize=8)
+    fig.text(0.01, 0.01, "Metrics measure pseudo-label agreement only; independent validation labels are not available.", fontsize=8)
     fig.subplots_adjust(left=0.07, right=0.99, top=0.82, bottom=0.18, wspace=0.18)
     fig.savefig(path, dpi=300)
     plt.close(fig)

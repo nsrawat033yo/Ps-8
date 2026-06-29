@@ -1,0 +1,72 @@
+Science Justification Report
+============================
+
+AOI: Faustini F2 prototype AOI (-87.8 to -86.9 lat, 80.0 to 85.0 E lon)
+
+Core answer for judges
+----------------------
+This system selects a radar-based candidate patch, a nearby preliminary landing candidate, and a conceptual rover route using a chain of explainable screening criteria: radar response, CPR-style ratio proxy, roughness penalty, slope safety, PSR stability proxy, distance, and route energy/risk tradeoff.
+
+Important scientific boundary
+-----------------------------
+These outputs are candidate-screening and mission-planning support products. Real PSR/illumination, Diviner thermal, OHRC hazard, and calibrated CPR/DOP validation are still required before compositional or operational claims.
+
+Ice probability model
+---------------------
+Weighted score = CPR-style ratio proxy + SAR backscatter intensity + roughness suitability + approximate PSR stability proxy.
+Model weights:
+- cpr_style_ratio_proxy: 0.30
+- sar_backscatter_intensity: 0.27
+- roughness_penalty: 0.23
+- psr_stability_proxy: 0.20
+
+Why C-055 is the top selected patch
+--------------------------------
+- Refined rank: 1.000; validation priority rank: 5.000.
+- Mean candidate probability: 0.839.
+- Ice confidence score: 1.000, computed from high radar score + low roughness + low slope.
+- CPR-style / ratio contribution: 0.281.
+- SAR intensity contribution: 0.267.
+- Roughness-suitability contribution: 0.223.
+- PSR-proxy contribution: 0.069.
+- Mean slope: 0.000 deg; terrain roughness proxy: 0.000.
+- Roughness ambiguity risk: Low.
+- Depth likelihood: shallow-likelihood (shallow=1.000, deep=0.650).
+- Why this matters: it balances strong radar screening response with low terrain penalty, so it is a better mission-planning target than a high-radar but rough/ambiguous patch.
+
+Why L-01 is the safest current landing candidate
+---------------------------------------------
+- Coordinates: lat -87.146797, lon 80.102911.
+- Inside configured AOI: yes.
+- Outside radar candidate mask: yes.
+- Local slope: 0.000 deg; slope score: 1.000.
+- Roughness/hazard score: 1.000.
+- Candidate proximity score: 0.930; distance to nearest candidate: 75.000 m.
+- Why this matters: landing is kept outside the candidate patch and risky terrain, but close enough that the rover can traverse to the science target.
+
+Why the shortest rover route is recommended
+--------------------------------
+- Target candidate patch: C-055.
+- Route decision score: 0.500; rank: 1.000.
+- Length: 8949.0 m.
+- Energy proxy: 10319.4.
+- Traverse risk score: 0.062.
+- Mean slope: 0.000 deg; percent under 5 deg: 100.0%.
+- Science reward proxy: 0.583.
+- Why this matters: the route recommendation is not simply shortest-distance; it balances distance, energy proxy, terrain risk, and science reward.
+- Note: if multiple route variants tie on geometry and risk, the first ranked route is reported while the alternatives remain available for review.
+
+Rover simulation summary
+------------------------
+- Simulated steps: 296.
+- Final distance: 8949.0 m.
+- Final cumulative energy proxy: 9051.1.
+- Max sampled slope: 0.000 deg.
+- Output figures: rover_energy_profile.png, rover_slope_vs_distance.png, rover_traversal_steps.png, rover_traversal_animation.gif.
+
+Data-driven results vs assumptions
+----------------------------------
+- Data-driven: SAR SRI intensity features, CPR-style ratio proxy, TMC-2 DTM slope/roughness, candidate patch geometry, landing distance, and route cost profiles.
+- Assumption/proxy: PSR stability proxy from latitude plus terrain-shadow context; this is not a substitute for a real illumination or PSR product.
+- Assumption/proxy: depth likelihood classes are rule-based planning labels from radar score and roughness, not measured depth.
+- Required validation: overlapping OHRC, Diviner thermal map, PSR/illumination layer, LAMP/LOLA/M3 context, and calibrated CPR/DOP products.

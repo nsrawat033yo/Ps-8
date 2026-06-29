@@ -16,6 +16,7 @@ def ensure_output_dirs(config: dict[str, Any]) -> dict[str, Path]:
         "figures": Path(outputs.get("figures", "outputs/figures")),
         "tables": Path(outputs.get("tables", "outputs/tables")),
         "masks": Path(outputs.get("masks", "outputs/masks")),
+        "rasters": Path(outputs.get("rasters", "outputs/rasters")),
         "routes": Path(outputs.get("routes", "outputs/routes")),
         "reports": Path(outputs.get("reports", "reports")),
         "models": Path(outputs.get("models", "models")),

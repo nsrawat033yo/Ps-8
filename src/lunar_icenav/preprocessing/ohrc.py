@@ -47,6 +47,14 @@ def inspect_ohrc_footprints(root: Path, aoi: dict[str, float]) -> pd.DataFrame:
             lons = [x for x in lons if x is not None]
             lat_overlap = bool(lats and max(lats) >= aoi["lat_min"] and min(lats) <= aoi["lat_max"])
             lon_overlap_simple = bool(lons and max(lons) >= aoi["lon_min"] and min(lons) <= aoi["lon_max"])
+            coverage_fraction = approximate_lonlat_overlap_fraction(
+                min(lats) if lats else np.nan,
+                max(lats) if lats else np.nan,
+                min(lons) if lons else np.nan,
+                max(lons) if lons else np.nan,
+                aoi,
+            )
+            coverage_class = "FULL" if coverage_fraction >= 0.999 else "PARTIAL" if coverage_fraction > 0 else "NO COVERAGE"
             rows.append({
                 "product_id": path.stem,
                 "path": str(path),
@@ -55,11 +63,24 @@ def inspect_ohrc_footprints(root: Path, aoi: dict[str, float]) -> pd.DataFrame:
                 "lat_max": max(lats) if lats else np.nan,
                 "lon_min_raw": min(lons) if lons else np.nan,
                 "lon_max_raw": max(lons) if lons else np.nan,
+                "coverage_fraction": coverage_fraction,
+                "coverage_class": coverage_class,
+                "usable_for_analysis": coverage_class in {"FULL", "PARTIAL"},
                 "overlaps_faustini_lat": lat_overlap,
                 "simple_lon_overlap": lon_overlap_simple,
                 "coverage_note": "not co-registered to Faustini AOI" if not lat_overlap else "possible latitude overlap; requires geometry CSV check",
             })
     return pd.DataFrame(rows)
+
+
+def approximate_lonlat_overlap_fraction(lat_min: float, lat_max: float, lon_min: float, lon_max: float, aoi: dict[str, float]) -> float:
+    if not all(np.isfinite(v) for v in [lat_min, lat_max, lon_min, lon_max]):
+        return 0.0
+    lat_overlap = max(0.0, min(lat_max, aoi["lat_max"]) - max(lat_min, aoi["lat_min"]))
+    lat_span = max(aoi["lat_max"] - aoi["lat_min"], 1e-9)
+    lon_overlap = max(0.0, min(lon_max, aoi["lon_max"]) - max(lon_min, aoi["lon_min"]))
+    lon_span = max(aoi["lon_max"] - aoi["lon_min"], 1e-9)
+    return float(np.clip((lat_overlap / lat_span) * (lon_overlap / lon_span), 0.0, 1.0))
 
 
 def load_first_ohrc_browse(root: Path) -> tuple[np.ndarray, str] | tuple[None, str]:

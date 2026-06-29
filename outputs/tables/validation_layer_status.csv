@@ -1,0 +1,12 @@
+validation_layer,status,used_now,module_enabled,confidence_effect,next_action
+SAR/DFSAR LH/LV SRI,available,yes,radar candidate screening,"primary screening evidence, proxy-only",Selected product ch2_sar_ncls_20200808t201154198_d_cp_d18
+LOLA/LDEM/LDSM terrain,available,fallback/context,"slope, roughness, landing, rover",improves terrain safety and roughness ambiguity review,Retain as fallback and sensitivity layer beside TMC-2 DTM
+TMC-2 DTM terrain,available,yes,"slope, roughness, landing, rover",local terrain/slope support for candidate ranking and route safety; not optical boulder confirmation,Selected ch2_tmc_ndn_20231026T1735025409_d_dtm_d18
+OHRC calibrated Faustini overlap,future_validation_layer_required,no,hazard proxy / boulder review,would reduce roughness ambiguity and landing hazard uncertainty,Download calibrated OHRC overlapping the configured AOI
+Diviner maximum temperature,future_validation_layer_required,no,thermal/cold-trap suitability,would support <110 K cold-trap suitability screening if available,Download Diviner maximum temperature map for AOI
+PSR / shadow / illumination,future_validation_layer_required,no,PSR validation and landing power constraints,would separate persistent shadow from rover power/landing constraints,Download PSR or illumination persistence layer
+PSR stability proxy,available_proxy,yes,candidate stability context,adds approximate polar/shadow context but does not replace real illumination modeling,Replace proxy with validated PSR/illumination layer when available
+LOLA albedo,future_validation_layer_required,no,surface-exposure validation context,would provide independent albedo context for surface ice screening,Download LOLA albedo layer for AOI
+LAMP H2O proxy / band ratio,future_validation_layer_required,no,surface-exposure validation context,would add ultraviolet H2O-proxy evidence,Download LAMP band-ratio product if available
+M3 spectral ice evidence,future_validation_layer_required,no,surface ice validation,"would validate surface-exposed ice signatures only, not subsurface proof",Download suitable polar M3 spectral products if available
+Complex/Stokes SAR products,future_validation_layer_required,no,true CPR/DOP derivation,would replace CPR-style proxy with physically calibrated polarimetry,Download complex/Stokes products and convention documentation

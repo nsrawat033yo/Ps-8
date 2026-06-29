@@ -136,10 +136,12 @@ def plan_routes(
     transform,
     crs_wkt: str,
     config: dict[str, Any],
+    target_candidate_id: str | None = None,
 ) -> tuple[dict[str, list[tuple[int, int]]], pd.DataFrame]:
     start, goal = choose_route_endpoints(sites, candidate_mask, features["candidate_score"])
     candidate_labels, _ = ndi.label(candidate_mask)
-    target_candidate_id = f"C-{int(candidate_labels[goal]):03d}" if candidate_labels[goal] > 0 else "nearest_candidate_pixel"
+    if target_candidate_id is None:
+        target_candidate_id = f"C-{int(candidate_labels[goal]):03d}" if candidate_labels[goal] > 0 else "nearest_candidate_pixel"
     routes: dict[str, list[tuple[int, int]]] = {}
     rows: list[dict[str, Any]] = []
     pixel_size = abs(float(transform.a))

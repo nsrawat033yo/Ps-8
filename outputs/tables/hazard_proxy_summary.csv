@@ -1,0 +1,4 @@
+hazard_layer,status,hazard_pixel_fraction_pct,interpretation
+SAR texture roughness proxy,available,10.000509093685965,proxy roughness/hazard layer; not direct boulder detection
+DEM terrain roughness proxy,available,6.425310261325799,local terrain roughness proxy for planning
+OHRC boulder/hazard layer,context_only_or_missing,,requires calibrated Faustini-overlapping OHRC before boulder claims

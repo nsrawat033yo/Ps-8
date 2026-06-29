@@ -1,5 +1,6 @@
 layer,status,detail
 SAR/DFSAR,usable,Selected ch2_sar_ncls_20200808t201154198_d_cp_d18 with AOI coverage 1.000
-DEM/LDEM/LDSM,usable,DEM rasters cover configured south-pole AOI and were resampled to SAR AOI for planning context.
-OHRC,context only,Available OHRC footprints do not directly co-register to Faustini AOI; download calibrated overlapping product.
+TMC-2 DTM,usable,Selected ch2_tmc_ndn_20231026T1735025409_d_dtm_d18 with AOI coverage 1.000; used for terrain slope/roughness.
+DEM/LDEM/LDSM,usable_fallback,LOLA/LDEM/LDSM terrain is retained as fallback/context and for TMC-2 sensitivity comparison when available.
+OHRC,context only,Available OHRC footprints do not overlap the Faustini AOI; excluded from hazard scoring.
 Ground truth labels,not available,U-Net uses rule-based pseudo-labels; metrics are agreement only.

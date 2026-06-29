@@ -22,7 +22,7 @@ def suitability_map(
     texture = features["texture"]
     intensity = features["intensity"]
     planning = config.get("planning", {})
-    max_slope = float(planning.get("max_slope_deg", 12.0))
+    max_slope = float(planning.get("max_slope_deg", 8.0))
     soft_max_slope = float(planning.get("soft_max_slope_deg", 25.0))
     if slope_deg is None:
         slope = np.zeros_like(texture, dtype="float32") + np.nan
@@ -31,33 +31,37 @@ def suitability_map(
     else:
         slope = slope_deg.astype("float32")
         slope_score = 1.0 - np.clip(slope / max_slope, 0, 1)
-        slope_ok = np.isfinite(slope) & (slope <= soft_max_slope)
+        slope_ok = np.isfinite(slope) & (slope < max_slope)
 
     hazard_score = robust_normalize(texture, valid)
     low_hazard_score = 1.0 - hazard_score
     distance_to_candidate_px = ndi.distance_transform_edt(~candidate_mask)
     proximity = 1.0 / (1.0 + distance_to_candidate_px / 40.0)
-    illumination_proxy = robust_normalize(intensity, valid)
+    illumination_score = np.where(valid, 0.5, np.nan).astype("float32")
+    temperature_score = np.where(valid, 0.5, np.nan).astype("float32")
     clearance = int(planning.get("candidate_clearance_pixels", 3))
-    not_inside_candidate = ndi.distance_transform_edt(candidate_mask) <= 0
     landing_allowed = valid & slope_ok & (~candidate_mask)
     if clearance > 0:
         landing_allowed &= distance_to_candidate_px >= clearance
 
     score = (
-        0.38 * slope_score
-        + 0.27 * low_hazard_score
-        + 0.25 * proximity
-        + 0.10 * illumination_proxy
+        0.34 * slope_score
+        + 0.26 * low_hazard_score
+        + 0.28 * proximity
+        + 0.06 * illumination_score
+        + 0.06 * temperature_score
     ).astype("float32")
     score[~landing_allowed] = np.nan
     layers = {
         "slope_score": slope_score.astype("float32"),
         "low_hazard_score": low_hazard_score.astype("float32"),
         "candidate_proximity_score": proximity.astype("float32"),
-        "illumination_proxy": illumination_proxy.astype("float32"),
+        "illumination_score": illumination_score,
+        "temperature_score": temperature_score,
         "landing_allowed": landing_allowed,
         "slope_deg": slope,
+        "illumination_layer_status": "missing_real_layer_neutral_score",
+        "temperature_layer_status": "missing_real_layer_neutral_score",
     }
     sites = top_landing_sites(score, slope, distance_to_candidate_px, transform, crs_wkt, int(planning.get("top_site_count", 5)))
     return score, sites, layers
