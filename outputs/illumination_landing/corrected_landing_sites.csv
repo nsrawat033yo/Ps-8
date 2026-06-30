@@ -1,6 +1,0 @@
-site_id,row,col,lat,lon,suitability_score,illumination_persistence,slope_deg,elevation_m,distance_to_ice_candidate_m,in_psr,illumination_status,mission_feasibility,illumination_class
-LS-01,1,888,-87.05384306949665,79.45774491924692,0.8045552372932434,0.574999988079071,0.0,-451.0,75.0,no,COMPUTED from DEM terrain model,FEASIBLE for solar-powered lander,good (50-70%)
-LS-02,2,570,-87.3111734546321,78.4530163342423,0.8045552372932434,0.574999988079071,0.0,-451.0,75.0,no,COMPUTED from DEM terrain model,FEASIBLE for solar-powered lander,good (50-70%)
-LS-03,11,479,-87.38611337309032,78.28321231078498,0.8045552372932434,0.574999988079071,0.0,-451.0,75.0,no,COMPUTED from DEM terrain model,FEASIBLE for solar-powered lander,good (50-70%)
-LS-04,16,505,-87.36595872729673,78.46566630322484,0.8045552372932434,0.574999988079071,0.0,-451.0,75.0,no,COMPUTED from DEM terrain model,FEASIBLE for solar-powered lander,good (50-70%)
-LS-05,63,774,-87.15533885996872,80.12344086873382,0.8045552372932434,0.574999988079071,0.0,-451.0,75.0,no,COMPUTED from DEM terrain model,FEASIBLE for solar-powered lander,good (50-70%)
