@@ -22,6 +22,8 @@ from lunar_icenav.io.products import discover_products, save_run_manifest
 from lunar_icenav.mapping.anomaly import candidate_mask_from_features, summarize_patches
 from lunar_icenav.models.training import run_unet_prototype
 from lunar_icenav.planning.landing import suitability_map
+from lunar_icenav.planning.landing import suitability_map
+from lunar_icenav.planning.illumination import compute_illumination_score
 from lunar_icenav.planning.rover import plan_routes, route_points_df
 from lunar_icenav.preprocessing.aoi import map_to_lonlat
 from lunar_icenav.preprocessing.dem import evaluate_tmc_dtm_coverage, read_dem_aoi, read_tmc_dtm_aoi
@@ -45,6 +47,7 @@ from lunar_icenav.viz.plots import (
     save_unet_training_curve,
     save_workflow_diagram,
 )
+from lunar_icenav.viz.interactive import generate_interactive_rover_map
 
 
 SAFE_NOTE = "Preliminary candidate decision-support output; validation required."
@@ -138,6 +141,16 @@ def run_pipeline(root: Path, config_path: Path = Path("configs/pipeline.json")) 
     tmc_lola_slope_comparison.to_csv(paths["tables"] / "tmc2_vs_lola_slope_comparison.csv", index=False)
     terrain_roughness = compute_terrain_roughness(elevation, slope)
     hillshade = compute_hillshade(elevation)
+    
+    print("Computing proper multi-azimuth illumination proxy...")
+    if elevation is not None and slope is not None:
+        pixel_size_m = abs(float(sar["transform"].a))
+        illumination_proxy, _, _ = compute_illumination_score(
+            elevation, slope, lat_grid, pixel_size_m, features["valid"]
+        )
+    else:
+        illumination_proxy = None
+        
     uncertainty = candidate_uncertainty(features["candidate_score"], thresholds["score_threshold"], features["valid"])
     psr_proxy = build_psr_stability_proxy(lat_grid, slope, hillshade, features["valid"])
     np.save(paths["masks"] / "psr_stability_proxy.npy", psr_proxy)
@@ -180,7 +193,15 @@ def run_pipeline(root: Path, config_path: Path = Path("configs/pipeline.json")) 
     planning_features["candidate_score"] = ice_probability.astype("float32")
     candidate_mask_for_planning = refined_candidate_mask if refined_candidate_mask.any() else candidate_mask
 
-    landing_score, landing_sites, landing_layers = suitability_map(candidate_mask_for_planning, planning_features, slope, sar["transform"], sar["crs_wkt"], config)
+    landing_score, landing_sites, landing_layers = suitability_map(
+        candidate_mask_for_planning, 
+        planning_features, 
+        slope, 
+        illumination_proxy,
+        sar["transform"], 
+        sar["crs_wkt"], 
+        config
+    )
     landing_sites = enrich_landing_sites_with_fuzzy_components(landing_sites, landing_layers, candidate_mask, slope, aoi)
     landing_sites = add_landing_context_columns(landing_sites)
     landing_sites = attach_nearest_candidate_context(landing_sites, patches)
@@ -218,8 +239,13 @@ def run_pipeline(root: Path, config_path: Path = Path("configs/pipeline.json")) 
         if not df.empty:
             df.to_csv(paths["routes"] / f"route_{mode}.csv", index=False)
             route_point_frames.append(df)
+    rover_routes_df = None
     if route_point_frames:
-        pd.concat(route_point_frames, ignore_index=True).to_csv(paths["routes"] / "rover_routes.csv", index=False)
+        rover_routes_df = pd.concat(route_point_frames, ignore_index=True)
+        rover_routes_df.to_csv(paths["routes"] / "rover_routes.csv", index=False)
+        
+    print("Generating Interactive Folium Rover Map...")
+    generate_interactive_rover_map(aoi, landing_sites, rover_routes_df, paths["figures"] / "interactive_rover_map.html")
 
     candidate_scientific_review = build_candidate_scientific_review(patches, landing_sites, route_summary)
     candidate_scientific_review.to_csv(paths["tables"] / "candidate_scientific_review.csv", index=False)

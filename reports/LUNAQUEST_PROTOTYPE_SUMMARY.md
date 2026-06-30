@@ -8,7 +8,7 @@ No output is presented as compositional proof. Candidate masks are screening out
 
 ## Actual data availability
 
-- Inventory rows: 1136
+- Inventory rows: 1223
 - Selected SAR product: `ch2_sar_ncls_20200808t201154198_d_cp_d18`
 - Selected SAR AOI coverage fraction: 1.000
 - Selected SAR pixel size: 25.0 m
@@ -26,7 +26,7 @@ The SAR features are intensity, LH/LV ratio proxy, polarization imbalance proxy,
 ## Landing and route prototype
 
 - Landing candidates found: 5
-- Top landing candidate: L-01 with suitability score 0.9204651117324829
+- Top landing candidate: L-01 with suitability score 0.8407848477363586
 - Route variants: shortest, safest, science_priority, energy_efficient
 - Blocked slope threshold for routing: >15 deg
 

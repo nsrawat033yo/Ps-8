@@ -14,6 +14,7 @@ def suitability_map(
     candidate_mask: np.ndarray,
     features: dict[str, np.ndarray],
     slope_deg: np.ndarray | None,
+    illumination: np.ndarray | None,
     transform,
     crs_wkt: str,
     config: dict[str, Any],
@@ -37,19 +38,28 @@ def suitability_map(
     low_hazard_score = 1.0 - hazard_score
     distance_to_candidate_px = ndi.distance_transform_edt(~candidate_mask)
     proximity = 1.0 / (1.0 + distance_to_candidate_px / 40.0)
-    illumination_score = np.where(valid, 0.5, np.nan).astype("float32")
+    
+    if illumination is not None:
+        illumination_score = np.clip(illumination, 0, 1).astype("float32")
+        illum_ok = illumination_score >= 0.40
+        illum_status = "Real proxy applied"
+    else:
+        illumination_score = np.where(valid, 0.5, np.nan).astype("float32")
+        illum_ok = valid.copy()
+        illum_status = "missing_real_layer_neutral_score"
+        
     temperature_score = np.where(valid, 0.5, np.nan).astype("float32")
     clearance = int(planning.get("candidate_clearance_pixels", 3))
-    landing_allowed = valid & slope_ok & (~candidate_mask)
+    
+    landing_allowed = valid & slope_ok & illum_ok & (~candidate_mask)
     if clearance > 0:
         landing_allowed &= distance_to_candidate_px >= clearance
 
     score = (
-        0.34 * slope_score
-        + 0.26 * low_hazard_score
-        + 0.28 * proximity
-        + 0.06 * illumination_score
-        + 0.06 * temperature_score
+        0.35 * illumination_score
+        + 0.25 * slope_score
+        + 0.25 * low_hazard_score
+        + 0.15 * proximity
     ).astype("float32")
     score[~landing_allowed] = np.nan
     layers = {
@@ -60,7 +70,7 @@ def suitability_map(
         "temperature_score": temperature_score,
         "landing_allowed": landing_allowed,
         "slope_deg": slope,
-        "illumination_layer_status": "missing_real_layer_neutral_score",
+        "illumination_layer_status": illum_status,
         "temperature_layer_status": "missing_real_layer_neutral_score",
     }
     sites = top_landing_sites(score, slope, distance_to_candidate_px, transform, crs_wkt, int(planning.get("top_site_count", 5)))
